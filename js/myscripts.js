@@ -2,6 +2,24 @@
 
 var display = "0";
 var memory = 0;
+var usedMemory = false;
+var operation = "string";
+
+function division (a, b) {
+  return a/b;
+}
+
+function multiplication (a, b) {
+  return a*b;
+}
+
+function subtraction (a, b) {
+  return a-b;
+}
+
+function sum (a,b) {
+  return a+b;
+}
 
 $(document).ready(function() {
 
@@ -35,110 +53,110 @@ $(document).ready(function() {
 
     // functionality of button "3"
   $("#btn3").click(function() {
-  if (display === "0")
-  {
-    display ="3";
-  }
-  else
-  {
-    display +="3";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="3";
+    }
+    else
+    {
+      display +="3";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "4"
   $("#btn4").click(function() {
-  if (display === "0")
-  {
-    display ="4";
-  }
-  else
-  {
-    display +="4";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="4";
+    }
+    else
+    {
+      display +="4";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "5"
   $("#btn5").click(function() {
-  if (display === "0")
-  {
-    display ="5";
-  }
-  else
-  {
-    display +="5";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="5";
+    }
+    else
+    {
+      display +="5";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "6"
   $("#btn6").click(function() {
-  if (display === "0")
-  {
-    display ="6";
-  }
-  else
-  {
-    display +="6";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="6";
+    }
+    else
+    {
+      display +="6";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "7"
   $("#btn7").click(function() {
-  if (display === "0")
-  {
-    display ="7";
-  }
-  else
-  {
-    display +="7";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="7";
+    }
+    else
+    {
+      display +="7";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "8"
   $("#btn8").click(function() {
-  if (display === "0")
-  {
-    display ="8";
-  }
-  else
-  {
-    display +="8";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="8";
+    }
+    else
+    {
+      display +="8";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "9"
   $("#btn9").click(function() {
-  if (display === "0")
-  {
-    display ="9";
-  }
-  else
-  {
-    display +="9";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display === "0")
+    {
+      display ="9";
+    }
+    else
+    {
+      display +="9";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "0"
   $("#btn0").click(function() {
-  if (display !== "0")
-  {
-    display +="0";
-  }
-  $("#calc-display").html(display);
-  console.log(display);
+    if (display !== "0")
+    {
+      display +="0";
+    }
+    $("#calc-display").html(display);
+    console.log(display);
   });
 
     // functionality of button "."
@@ -158,23 +176,82 @@ $(document).ready(function() {
     console.log(display);
   });
 
+   // functionality of button "="
+  $("#btnEqual").click(function() {
+    switch (operation) {
+      case "division":
+        memory = division(memory, Number(display));
+        display = memory.toString();
+        $("#calc-display").html(display);
+        console.log("display is: ", display);
+        console.log("memory is: ", memory);
+        break;
+      case "multiplication":
+        memory = multiplication(memory, Number(display));
+        display = memory.toString();
+        $("#calc-display").html(display);
+        console.log("display is: ", display);
+        console.log("memory is: ", memory);
+        break;
+      case "subtraction":
+        memory = subtraction(memory, Number(display));
+        display = memory.toString();
+        $("#calc-display").html(display);
+        console.log("display is: ", display);
+        console.log("memory is: ", memory);
+        break;
+      case "sum":
+        memory = sum(memory, Number(display));
+        display = memory.toString();
+        $("#calc-display").html(display);
+        console.log("display is: ", display);
+        console.log("memory is: ", memory);
+        break;
+      default:
+        display = "Error!";
+    }
+  });
+
     // functionality of button "/"
   $("#btnDiv").click(function() {
-    if (memory === 0)
+    if (usedMemory === false)
     {
       memory = Number(display);
-      $("#calc-display").html(display);
+      usedMemory = true;
+      operation = "division";
       display ="0";
       console.log("memory is: ", memory);
     }
     else
     {
-      memory = memory / Number(display);
-      $("#calc-display").html(display);
-      display ="0";
-      console.log("memory is: ", memory);
-    }
-    
+      switch (operation) {
+        case "division":
+          memory = division(memory, Number(display));
+          operation = "division";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "multiplication":
+          memory = multiplicaiton(memory, Number(display));
+          operation = "division";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "subtraction":
+          memory = subtraction(memory, Number(display));
+          operation = "division";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "sum":
+          memory = sum(memory, Number(display));
+          operation = "division";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        }
+      }
+
   });
 
 });

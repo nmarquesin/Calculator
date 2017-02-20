@@ -1,6 +1,7 @@
 
 
 var display = "0";
+var memory = 0;
 
 $(document).ready(function() {
 
@@ -155,6 +156,25 @@ $(document).ready(function() {
     display ="0";
     $("#calc-display").html(display);
     console.log(display);
+  });
+
+    // functionality of button "/"
+  $("#btnDiv").click(function() {
+    if (memory === 0)
+    {
+      memory = Number(display);
+      $("#calc-display").html(display);
+      display ="0";
+      console.log("memory is: ", memory);
+    }
+    else
+    {
+      memory = memory / Number(display);
+      $("#calc-display").html(display);
+      display ="0";
+      console.log("memory is: ", memory);
+    }
+    
   });
 
 });

@@ -252,7 +252,7 @@ $(document).ready(function() {
           console.log("memory is: ", memory);
           break;
         case "multiplication":
-          memory = multiplicaiton(memory, Number(display));
+          memory = multiplication(memory, Number(display));
           operation = "division";
           display ="0";
           console.log("memory is: ", memory);
@@ -271,7 +271,129 @@ $(document).ready(function() {
           break;
         }
       }
+    });
 
-  });
+  // functionality of button "x"
+  $("#btnMul").click(function() {
+    if (usedMemory === false)
+    {
+      memory = Number(display);
+      usedMemory = true;
+      operation = "multiplication";
+      display ="0";
+      console.log("memory is: ", memory);
+    }
+    else
+    {
+      switch (operation) {
+        case "division":
+          memory = division(memory, Number(display));
+          operation = "multiplication";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "multiplication":
+          memory = multiplication(memory, Number(display));
+          operation = "multiplication";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "subtraction":
+          memory = subtraction(memory, Number(display));
+          operation = "multiplication";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "sum":
+          memory = sum(memory, Number(display));
+          operation = "multiplication";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        }
+      }
+    });
 
-});
+  // functionality of button "-"
+  $("#btnSub").click(function() {
+    if (usedMemory === false)
+    {
+      memory = Number(display);
+      usedMemory = true;
+      operation = "subtraction";
+      display ="0";
+      console.log("memory is: ", memory);
+    }
+    else
+    {
+      switch (operation) {
+        case "division":
+          memory = division(memory, Number(display));
+          operation = "subtraction";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "multiplication":
+          memory = multiplication(memory, Number(display));
+          operation = "subtraction";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "subtraction":
+          memory = subtraction(memory, Number(display));
+          operation = "subtraction";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "sum":
+          memory = sum(memory, Number(display));
+          operation = "subtraction";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        }
+      }
+    });
+
+  // functionality of button "+"
+  $("#btnAdd").click(function() {
+    if (usedMemory === false)
+    {
+      memory = Number(display);
+      usedMemory = true;
+      operation = "sum";
+      display ="0";
+      console.log("memory is: ", memory);
+    }
+    else
+    {
+      switch (operation) {
+        case "division":
+          memory = division(memory, Number(display));
+          operation = "sum";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "multiplication":
+          memory = multiplication(memory, Number(display));
+          operation = "sum";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "subtraction":
+          memory = subtraction(memory, Number(display));
+          operation = "sum";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        case "sum":
+          memory = sum(memory, Number(display));
+          operation = "sum";
+          display ="0";
+          console.log("memory is: ", memory);
+          break;
+        }
+      }
+    });
+
+}); // end of $(document).ready()

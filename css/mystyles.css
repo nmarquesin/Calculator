@@ -10,3 +10,6 @@
 .btn-enter {
   height: 105px;
 }
+#calc-display {
+  font-size: 30px;
+}

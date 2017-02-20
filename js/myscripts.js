@@ -1,9 +1,9 @@
 
 
 var display = "0";
-var memory = 0;
+var memory = 0.0;
 var usedMemory = false;
-var operation = "string";
+var operation = " ";
 
 function division (a, b) {
   return a/b;
@@ -173,15 +173,29 @@ $(document).ready(function() {
   $("#btnCE").click(function() {
     display ="0";
     $("#calc-display").html(display);
-    console.log(display);
+    console.log("display is: ", display);
+    console.log("memory is: ", memory);
   });
 
-   // functionality of button "="
+    // functionality of button "AC"
+  $("#btnAC").click(function() {
+    display ="0";
+    memory = 0;
+    usedMemory = false;
+    operation = " ";
+    $("#calc-display").html(display);
+    console.log("display is: ", display);
+    console.log("memory is: ", memory);
+  });
+
+    // functionality of button "="
   $("#btnEqual").click(function() {
     switch (operation) {
       case "division":
         memory = division(memory, Number(display));
         display = memory.toString();
+        memory = "0";
+        usedMemory = false;
         $("#calc-display").html(display);
         console.log("display is: ", display);
         console.log("memory is: ", memory);
@@ -189,6 +203,8 @@ $(document).ready(function() {
       case "multiplication":
         memory = multiplication(memory, Number(display));
         display = memory.toString();
+        memory = "0";
+        usedMemory = false;
         $("#calc-display").html(display);
         console.log("display is: ", display);
         console.log("memory is: ", memory);
@@ -196,6 +212,8 @@ $(document).ready(function() {
       case "subtraction":
         memory = subtraction(memory, Number(display));
         display = memory.toString();
+        memory = "0";
+        usedMemory = false;
         $("#calc-display").html(display);
         console.log("display is: ", display);
         console.log("memory is: ", memory);
@@ -203,6 +221,8 @@ $(document).ready(function() {
       case "sum":
         memory = sum(memory, Number(display));
         display = memory.toString();
+        memory = "0";
+        usedMemory = false;
         $("#calc-display").html(display);
         console.log("display is: ", display);
         console.log("memory is: ", memory);

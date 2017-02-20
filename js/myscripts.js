@@ -150,4 +150,11 @@ $(document).ready(function() {
     }
   });
 
+    // functionality of button "CE"
+  $("#btnCE").click(function() {
+    display ="0";
+    $("#calc-display").html(display);
+    console.log(display);
+  });
+
 });

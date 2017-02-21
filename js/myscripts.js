@@ -29,9 +29,13 @@ $(document).ready(function() {
     {
       display ="1";
     }
-    else
+    else if (display.length < 9)
     {
       display +="1";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -43,9 +47,13 @@ $(document).ready(function() {
     {
       display ="2";
     }
-    else
+    else if (display.length < 9)
     {
       display +="2";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -57,9 +65,13 @@ $(document).ready(function() {
     {
       display ="3";
     }
-    else
+    else if (display.length < 9)
     {
       display +="3";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -71,9 +83,13 @@ $(document).ready(function() {
     {
       display ="4";
     }
-    else
+    else if (display.length < 9)
     {
       display +="4";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -85,9 +101,13 @@ $(document).ready(function() {
     {
       display ="5";
     }
-    else
+    else if (display.length < 9)
     {
       display +="5";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -99,9 +119,13 @@ $(document).ready(function() {
     {
       display ="6";
     }
-    else
+    else if (display.length < 9)
     {
       display +="6";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -113,9 +137,13 @@ $(document).ready(function() {
     {
       display ="7";
     }
-    else
+    else if (display.length < 9)
     {
       display +="7";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -127,9 +155,13 @@ $(document).ready(function() {
     {
       display ="8";
     }
-    else
+    else if (display.length < 9)
     {
       display +="8";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -141,9 +173,13 @@ $(document).ready(function() {
     {
       display ="9";
     }
-    else
+    else if (display.length < 9)
     {
       display +="9";
+    }
+    else
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);
@@ -151,9 +187,13 @@ $(document).ready(function() {
 
     // functionality of button "0"
   $("#btn0").click(function() {
-    if (display !== "0")
+    if (display !== "0" && display.length < 9)
     {
       display +="0";
+    }
+    else if (display.length >= 9)
+    {
+      display = "Digit Limit Met";
     }
     $("#calc-display").html(display);
     console.log(display);

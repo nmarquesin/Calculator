@@ -1,5 +1,6 @@
 .calc-main-body {
   margin-top: 20px;
+  width: 350px;
 }
 .row {
   margin-top: 5px;
@@ -12,4 +13,7 @@
 }
 #calc-display {
   font-size: 30px;
+}
+#btns-last-2-rows {
+  margin-top: 0;
 }
